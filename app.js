@@ -5,8 +5,8 @@ const bodyParser = require('body-parser');
 const session = require('express-session');
 const csrf = require('csurf');
 
-const RutaActuales = require('./routes/actuales.routes');
-const RutaHistoricos = require('./routes/historicos.routes');
+const RutaUsers = require('./routes/users.routes');
+const RutaJugadores = require('./routes/jugadores.routes');
 
 app.set('view engine', 'ejs');
 app.set('views', 'views');
@@ -28,8 +28,8 @@ app.use((request, response, next) => {
     next();
 });
 
-app.use('/', RutaActuales);
-app.use('/jugadores', RutaHistoricos);
+app.use('/', RutaUsers);
+app.use('/jugadores', RutaJugadores);
 
 // 404
 app.use((request, response) => {

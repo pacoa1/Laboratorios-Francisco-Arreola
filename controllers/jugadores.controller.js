@@ -5,13 +5,17 @@ exports.getHistoricos = (request, response) => {
 };
 
 exports.getNuevo = (request, response) => {
-    response.render('nuevo');
+    Jugador.fetchPosiciones()
+        .then(([rows, fieldData]) => {
+            response.render('nuevo', {posiciones: rows});
+        })
+        .catch(err => console.log(err));
 };
 
 exports.postNuevo = (request, response) => {
     const nuevo = new Jugador(
         request.body.nombre,
-        request.body.posicion,
+        request.body.id_posicion,
         request.body.imagen
     );
     nuevo.save()
@@ -23,9 +27,15 @@ exports.postNuevo = (request, response) => {
 
 exports.getEditar = (request, response) => {
     const id = request.params.jugador_id;
-    Jugador.fetchOne(id)
-        .then(([rows, fieldData]) => {
-            response.render('editar', {jugador: rows[0]});
+    const jugadorPromise = Jugador.fetchOne(id);
+    const posicionesPromise = Jugador.fetchPosiciones();
+
+    Promise.all([jugadorPromise, posicionesPromise])
+        .then(([[jugadorRows], [posicionesRows]]) => {
+            response.render('editar', {
+                jugador: jugadorRows[0],
+                posiciones: posicionesRows
+            });
         })
         .catch(err => console.log(err));
 };
@@ -34,7 +44,7 @@ exports.postEditar = (request, response) => {
     Jugador.update(
         request.body.id,
         request.body.nombre,
-        request.body.posicion,
+        request.body.id_posicion,
         request.body.imagen
     )
         .then(() => {

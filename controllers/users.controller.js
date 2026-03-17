@@ -16,13 +16,18 @@ exports.getInicio = (request, response) => {
 };
 
 exports.getLogin = (request, response) => {
-    response.render('login');
+    const error = request.session.error || '';
+    request.session.error = '';
+    response.render('login', {
+        error: error
+    });
 };
 
 exports.postLogin = (request, response) => {
     User.findByUsername(request.body.usuario)
         .then(([rows, fieldData]) => {
             if (rows.length === 0) {
+                request.session.error = 'Usuario y/o password no coinciden';
                 return response.redirect('/login');
             }
             const user = rows[0];
@@ -43,9 +48,11 @@ exports.postLogin = (request, response) => {
                             });
                         });
                     }
-                    response.redirect('/login');
+                    request.session.error = 'Usuario y/o password no coinciden';
+                    return response.redirect('/login');
                 })
                 .catch(err => {
+                    console.log(err);
                     response.redirect('/login');
                 });
         })
@@ -53,17 +60,28 @@ exports.postLogin = (request, response) => {
 };
 
 exports.getSignup = (request, response) => {
-    response.render('signup');
+    const error = request.session.error || '';
+    request.session.error = '';
+    response.render('signup', {
+        error: error
+    });
 };
 
 exports.postSignup = (request, response) => {
     const username = request.body.usuario;
     const password = request.body.password;
+    const confirmar = request.body.confirmar;
     const nombre = request.body.nombre;
+
+    if (password !== confirmar) {
+        request.session.error = 'Los passwords no coinciden';
+        return response.redirect('/signup');
+    }
 
     User.findByUsername(username)
         .then(([rows, fieldData]) => {
             if (rows.length > 0) {
+                request.session.error = 'El usuario ya existe';
                 return response.redirect('/signup');
             }
             const user = new User(username, password, nombre);

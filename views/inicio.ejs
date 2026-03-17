@@ -12,6 +12,63 @@
         <% for (let jugador of jugadores) { %>
           <div class="column">
             <a href="/jugadores/<%= jugador.id %>"><%= jugador.nombre %></a>
+            <span class="tag"><%= jugador.posicion %></span>
+            <figure class="image">
+              <img class="is-rounded" src="<%= jugador.imagen %>" />
+            </figure>
+            <% if (privilegios.includes('actualizar_jugadores')) { %>
+              <a href="/jugadores/<%= jugador.id %>/editar"><button class="button is-link">Editar</button></a>
+            <% } %>
+          </div>
+        <% } %>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <div class="columns">
+        <div class="column">
+          <h1 class="title">Historia y Grandeza del Club Deportivo Guadalajara</h1>
+          <div class="content">
+            <ul>
+              <li><strong>Fundación:</strong> 8 de mayo de 1906. Fundado por el belga Edgar Everaert y el francés Calixto Gas bajo el nombre de "Club Unión". En 1908 adoptó el nombre de Guadalajara.</li>
+              <li><strong>La Tradición Nacionalista:</strong> La política de jugar <em>únicamente con futbolistas mexicanos</em> se instauró formalmente en 1943 al iniciar la era profesional.</li>
+              <li><strong>Apodos:</strong> El Rebaño Sagrado, Chivas, El Campeonísimo, Rojiblancos.</li>
+              <li><strong>Estadios Históricos:</strong> Empezaron en el Parque Oblatos, forjaron su grandeza en el mítico Estadio Jalisco, y desde 2010 su casa es el Estadio Akron en Zapopan, Jalisco.</li>
+              <li><strong>Palmarés Principal:</strong> 12 títulos de Primera División, 4 Copas México, 7 Campeones de Campeones, 1 Supercopa MX y 2 Ligas de Campeones de la CONCACAF.</li>
+              <li><strong>El Campeonísimo (1956-1965):</strong> Ganaron 7 títulos de liga en 9 años bajo el Ing. Javier de la Torre.</li>
+              <li><strong>Leyendas Fundadoras:</strong> Salvador "Chava" Reyes, Jaime "Tubo" Gómez, José "Jamaicón" Villegas e Ignacio Calderón.</li>
+              <li><strong>Ídolos Modernos:</strong> Omar Bravo, Ramón Morales, Oswaldo Sánchez, Carlos Salcido y Javier "Chicharito" Hernández.</li>
+              <li><strong>La Era Almeyda (2015-2018):</strong> 1 Liga (Clausura 2017), 2 Copas MX, 1 Supercopa y 1 Concachampions.</li>
+              <li><strong>Rivalidades de Sangre:</strong>
+                <ul>
+                  <li><em>Clásico Nacional:</em> vs. Club América.</li>
+                  <li><em>Clásico Tapatío:</em> vs. Atlas.</li>
+                </ul>
+              </li>
+              <li><strong>Chivas Femenil:</strong> Primer equipo campeón en la historia de la Liga MX Femenil (Apertura 2017).</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<%- include('includes/_footer.ejs') %><%- include('includes/_header.ejs') %>
+
+      <% if (usuario) { %>
+        <p>Hola <strong><%= usuario %></strong>! <a href="/logout">Cerrar sesión</a></p>
+      <% } %>
+
+      <% if (privilegios.includes('crear_jugadores')) { %>
+        <a href="/jugadores/nuevo"><button class="button is-danger">Nuevo jugador</button></a>
+      <% } %>
+      <a href="/jugadores/historicos"><button class="button is-link">Jugadores históricos</button></a>
+      <div class="columns">
+        <% for (let jugador of jugadores) { %>
+          <div class="column">
+            <a href="/jugadores/<%= jugador.id %>"><%= jugador.nombre %></a>
+            <span class="tag"><%= jugador.posicion %></span>
             <figure class="image">
               <img class="is-rounded" src="<%= jugador.imagen %>" />
             </figure>
