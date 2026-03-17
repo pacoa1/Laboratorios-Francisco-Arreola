@@ -1,7 +1,5 @@
 # Respuestas a Preguntas de Laboratorios
 
-Este repositorio contiene las respuestas a las preguntas teóricas y prácticas de los laboratorios de Desarrollo de Aplicaciones Web.
-
 ## Índice
 * [Lab 1 - Introducción a HTML5 y Aplicaciones Web](#lab-1---introducción-a-html5-y-aplicaciones-web)
 * [Lab 3 - CSS](#lab-3---css)
