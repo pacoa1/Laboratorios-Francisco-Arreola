@@ -1,0 +1,28 @@
+<%- include('includes/_header.ejs') %>
+
+<form action="/nuevo" method="POST">
+  <div class="field">
+    <label for="nombre" class="label">Nombre</label>
+    <div class="control">
+      <input id="nombre" name="nombre" class="input" type="text" placeholder="e.g. Chicharito">
+    </div>
+  </div>
+
+  <div class="field">
+    <label for="posicion" class="label">Posición</label>
+    <div class="control">
+      <input id="posicion" name="posicion" class="input" type="text" placeholder="e.g. Delantero">
+    </div>
+  </div>
+
+  <div class="field">
+    <label for="imagen" class="label">Imagen</label>
+    <div class="control">
+      <input id="imagen" name="imagen" class="input" type="text" placeholder="e.g. https://ejemplo.com/foto.jpg">
+    </div>
+  </div>
+
+  <input class="button is-danger" type="submit" value="Guardar">
+</form>
+
+<%- include('includes/_footer.ejs') %>

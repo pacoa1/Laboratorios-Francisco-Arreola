@@ -12,8 +12,8 @@ app.set('views', 'views');
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(RutaActuales);
-app.use(RutaHistoricos);
+app.use('/', RutaActuales);
+app.use('/', RutaHistoricos);
 
 // 404
 app.use((request, response) => {
