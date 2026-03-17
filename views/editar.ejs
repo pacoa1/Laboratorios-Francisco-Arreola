@@ -2,6 +2,7 @@
 
 <h2 class="title is-4">Editar Jugador</h2>
 <form action="/editar" method="POST">
+  <input type="hidden" name="_csrf" value="<%= csrfToken %>">
   <input type="hidden" name="id" value="<%= jugador.id %>">
   <div class="field">
     <label for="nombre" class="label">Nombre</label>

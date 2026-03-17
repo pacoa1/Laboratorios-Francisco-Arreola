@@ -3,6 +3,7 @@ const app = express();
 const path = require('path');
 const bodyParser = require('body-parser');
 const session = require('express-session');
+const csrf = require('csurf');
 
 const RutaActuales = require('./routes/actuales.routes');
 const RutaHistoricos = require('./routes/historicos.routes');
@@ -18,6 +19,14 @@ app.use(session({
     resave: false,
     saveUninitialized: false,
 }));
+
+const csrfProtection = csrf();
+app.use(csrfProtection);
+
+app.use((request, response, next) => {
+    response.locals.csrfToken = request.csrfToken();
+    next();
+});
 
 app.use('/', RutaActuales);
 app.use('/', RutaHistoricos);

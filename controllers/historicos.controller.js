@@ -1,23 +1,14 @@
 const Jugador = require('../models/jugador.model');
 
 exports.getHistoricos = (request, response) => {
-    if (!request.session.usuario) {
-        return response.redirect('/login');
-    }
     response.render('historicos');
 };
 
 exports.getNuevo = (request, response) => {
-    if (!request.session.usuario) {
-        return response.redirect('/login');
-    }
     response.render('nuevo');
 };
 
 exports.postNuevo = (request, response) => {
-    if (!request.session.usuario) {
-        return response.redirect('/login');
-    }
     const nuevo = new Jugador(
         request.body.nombre,
         request.body.posicion,
@@ -31,9 +22,6 @@ exports.postNuevo = (request, response) => {
 };
 
 exports.getEditar = (request, response) => {
-    if (!request.session.usuario) {
-        return response.redirect('/login');
-    }
     const id = request.params.jugador_id;
     Jugador.fetchOne(id)
         .then(([rows, fieldData]) => {
@@ -43,9 +31,6 @@ exports.getEditar = (request, response) => {
 };
 
 exports.postEditar = (request, response) => {
-    if (!request.session.usuario) {
-        return response.redirect('/login');
-    }
     Jugador.update(
         request.body.id,
         request.body.nombre,
