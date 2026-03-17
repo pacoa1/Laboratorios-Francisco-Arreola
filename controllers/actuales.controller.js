@@ -1,13 +1,15 @@
 const Jugador = require('../models/jugador.model');
 const User = require('../models/user.model');
 const bcrypt = require('bcrypt');
+const db = require('../util/database');
 
 exports.getInicio = (request, response) => {
     Jugador.fetchAll()
         .then(([rows, fieldData]) => {
             response.render('inicio', {
                 jugadores: rows,
-                usuario: request.session.user ? request.session.user.nombre : null
+                usuario: request.session.user ? request.session.user.nombre : null,
+                privilegios: request.session.privilegios || []
             });
         })
         .catch(err => console.log(err));
@@ -29,8 +31,16 @@ exports.postLogin = (request, response) => {
                     if (doMatch) {
                         request.session.isLoggedIn = true;
                         request.session.user = user;
-                        return request.session.save(err => {
-                            response.redirect('/inicio');
+                        return db.execute(
+                            `SELECT p.privilegio FROM privilegios p
+                             INNER JOIN otorga o ON p.id = o.id_privilegio
+                             INNER JOIN tiene t ON o.id_rol = t.id_rol
+                             WHERE t.id_usuario = ?`, [user.username]
+                        ).then(([rows]) => {
+                            request.session.privilegios = rows.map(r => r.privilegio);
+                            return request.session.save(err => {
+                                response.redirect('/inicio/jugadores/actuales');
+                            });
                         });
                     }
                     response.redirect('/login');
@@ -57,7 +67,9 @@ exports.postSignup = (request, response) => {
                 return response.redirect('/signup');
             }
             const user = new User(username, password, nombre);
-            return user.save();
+            return user.save().then(() => {
+                return db.execute('INSERT INTO tiene (id_usuario, id_rol) VALUES (?, 2)', [username]);
+            });
         })
         .then(() => {
             response.redirect('/login');

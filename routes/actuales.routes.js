@@ -2,8 +2,9 @@ const express = require('express');
 const router = express.Router();
 const actualesController = require('../controllers/actuales.controller');
 const isAuth = require('../util/is-auth');
+const canView = require('../util/can-view');
 
-router.get('/inicio', isAuth, actualesController.getInicio);
+router.get('/inicio/jugadores/actuales', isAuth, canView, actualesController.getInicio);
 router.get('/login', actualesController.getLogin);
 router.post('/login', actualesController.postLogin);
 router.get('/signup', actualesController.getSignup);

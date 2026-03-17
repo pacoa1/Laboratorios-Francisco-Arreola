@@ -1,7 +1,9 @@
 <%- include('includes/_header.ejs') %>
 
+<a href="/inicio/jugadores/actuales"><button class="button is-danger">Regresar</button></a>
+<br><br>
 <h2 class="title is-4">Editar Jugador</h2>
-<form action="/editar" method="POST">
+<form action="/jugadores/editar" method="POST">
   <input type="hidden" name="_csrf" value="<%= csrfToken %>">
   <input type="hidden" name="id" value="<%= jugador.id %>">
   <div class="field">

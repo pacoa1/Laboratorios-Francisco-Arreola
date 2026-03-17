@@ -1,0 +1,14 @@
+<%- include('includes/_header.ejs') %>
+
+      <a href="/inicio/jugadores/actuales"><button class="button is-danger">Regresar</button></a>
+      <% if (privilegios.includes('actualizar_jugadores')) { %>
+        <a href="/jugadores/<%= jugador.id %>/editar"><button class="button is-link">Editar</button></a>
+      <% } %>
+      <br><br>
+      <h2 class="title is-4"><%= jugador.nombre %></h2>
+      <p><strong>Posición:</strong> <%= jugador.posicion %></p>
+      <figure class="image">
+        <img class="is-rounded" src="<%= jugador.imagen %>" />
+      </figure>
+
+<%- include('includes/_footer.ejs') %>

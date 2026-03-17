@@ -29,11 +29,11 @@ app.use((request, response, next) => {
 });
 
 app.use('/', RutaActuales);
-app.use('/', RutaHistoricos);
+app.use('/jugadores', RutaHistoricos);
 
 // 404
 app.use((request, response) => {
-    response.status(404).send('<h1>Error 404</h1><a href="/">Regresar</a>');
+    response.status(404).send('<h1>Error 404</h1><a href="/inicio/jugadores/actuales">Regresar</a>');
 });
 
 app.listen(3000);
