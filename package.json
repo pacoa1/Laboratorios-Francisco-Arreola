@@ -1,0 +1,30 @@
+{
+  "name": "laboratorios-francisco-arreola",
+  "version": "1.0.0",
+  "description": "Proyecto para is laboratorios de la materia TC2005B Construcción de software y toma de decisiones",
+  "homepage": "https://github.com/pacoa1/Laboratorios-Francisco-Arreola#readme",
+  "bugs": {
+    "url": "https://github.com/pacoa1/Laboratorios-Francisco-Arreola/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pacoa1/Laboratorios-Francisco-Arreola.git"
+  },
+  "license": "MIT",
+  "author": "Francisco Rafael Arreola Corona - A01706242",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "start": "node --watch app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "body-parser": "^2.2.2",
+    "csurf": "^1.11.0",
+    "ejs": "^5.0.1",
+    "express": "^5.2.1",
+    "express-session": "^1.19.0",
+    "mysql2": "^3.20.0"
+  }
+}
