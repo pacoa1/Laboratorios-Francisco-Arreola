@@ -13,7 +13,7 @@
   "license": "MIT",
   "author": "Francisco Rafael Arreola Corona - A01706242",
   "type": "commonjs",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "start": "node --watch app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
