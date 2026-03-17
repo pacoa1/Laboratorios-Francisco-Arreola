@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const bodyParser = require('body-parser');
+const session = require('express-session');
 
 const RutaActuales = require('./routes/actuales.routes');
 const RutaHistoricos = require('./routes/historicos.routes');
@@ -11,6 +12,12 @@ app.set('views', 'views');
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(session({
+    secret: 'chivas-rebano-sagrado-secreto-2026',
+    resave: false,
+    saveUninitialized: false,
+}));
 
 app.use('/', RutaActuales);
 app.use('/', RutaHistoricos);

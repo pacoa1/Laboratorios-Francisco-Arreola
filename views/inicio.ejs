@@ -1,6 +1,14 @@
 <%- include('includes/_header.ejs') %>
 
-      <a href="/nuevo"><button class="button is-danger">Nuevo jugador</button></a>
+      <% if (usuario) { %>
+        <p>Hola <strong><%= usuario %></strong>! <a href="/logout">Cerrar sesión</a></p>
+      <% } else { %>
+        <p><a href="/login">Iniciar sesión</a> para agregar jugadores</p>
+      <% } %>
+
+      <% if (usuario) { %>
+        <a href="/nuevo"><button class="button is-danger">Nuevo jugador</button></a>
+      <% } %>
       <a href="/historicos"><button class="button is-link">Jugadores históricos</button></a>
       <div class="columns">
         <% for (let jugador of jugadores) { %>

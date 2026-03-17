@@ -1,0 +1,14 @@
+<%- include('includes/_header.ejs') %>
+
+<h2 class="title is-4">Iniciar Sesión</h2>
+<form action="/login" method="POST">
+  <div class="field">
+    <label for="usuario" class="label">Nombre de usuario</label>
+    <div class="control">
+      <input id="usuario" name="usuario" class="input" type="text" placeholder="e.g. Paco14" required>
+    </div>
+  </div>
+  <input class="button is-danger" type="submit" value="Entrar">
+</form>
+
+<%- include('includes/_footer.ejs') %>

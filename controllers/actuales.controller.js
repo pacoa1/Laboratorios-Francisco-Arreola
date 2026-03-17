@@ -3,6 +3,9 @@ const Jugador = require('../models/jugador.model');
 let inicializado = false;
 
 exports.getInicio = (request, response) => {
+    if (!request.session.usuario) {
+        return response.redirect('/login');
+    }
     if (!inicializado) {
         const tala = new Jugador(
             "Tala Rangel",
@@ -13,5 +16,23 @@ exports.getInicio = (request, response) => {
         inicializado = true;
     }
     const jugadores = Jugador.fetchAll();
-    response.render('inicio', {jugadores: jugadores});
+    response.render('inicio', {
+        jugadores: jugadores,
+        usuario: request.session.usuario
+    });
+};
+
+exports.getLogin = (request, response) => {
+    response.render('login');
+};
+
+exports.postLogin = (request, response) => {
+    request.session.usuario = request.body.usuario;
+    response.redirect('/inicio');
+};
+
+exports.getLogout = (request, response) => {
+    request.session.destroy(() => {
+        response.redirect('/login');
+    });
 };
