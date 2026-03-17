@@ -1,26 +1,23 @@
 const express = require('express');
 const app = express();
+const path = require('path');
 const bodyParser = require('body-parser');
 
-const RutaActuales = require('./routes/actuales');
-const RutaHistoricos = require('./routes/historicos');
-const { html_header, html_footer } = require('./index');
+const RutaActuales = require('./routes/actuales.routes');
+const RutaHistoricos = require('./routes/historicos.routes');
+
+app.set('view engine', 'ejs');
+app.set('views', 'views');
 
 app.use(bodyParser.urlencoded({extended: false}));
+app.use(express.static(path.join(__dirname, 'public')));
 
-// Servir archivos CSS y JS
-app.use('/css', express.static('css'));
-app.use('/js', express.static('js'));
-
-// Módulo 1: actuales
 app.use(RutaActuales);
-
-// Módulo 2: historicos
 app.use(RutaHistoricos);
 
 // 404
 app.use((request, response) => {
-    response.status(404).send(html_header + "Error 404" + html_footer);
+    response.status(404).send('<h1>Error 404</h1><a href="/">Regresar</a>');
 });
 
 app.listen(3000);
