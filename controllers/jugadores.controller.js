@@ -16,7 +16,7 @@ exports.postNuevo = (request, response) => {
     const nuevo = new Jugador(
         request.body.nombre,
         request.body.id_posicion,
-        request.body.imagen
+        request.file ? request.file.path : ''
     );
     nuevo.save()
         .then(() => {
@@ -41,11 +41,16 @@ exports.getEditar = (request, response) => {
 };
 
 exports.postEditar = (request, response) => {
+    let imagen = request.body.imagen_vieja;
+    if (request.file) {
+        imagen = request.file.path;
+    }
+
     Jugador.update(
         request.body.id,
         request.body.nombre,
         request.body.id_posicion,
-        request.body.imagen
+        imagen
     )
         .then(() => {
             response.redirect('/jugadores/' + request.body.id);

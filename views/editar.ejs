@@ -3,9 +3,11 @@
 <a href="/inicio/jugadores/actuales"><button class="button is-danger">Regresar</button></a>
 <br><br>
 <h2 class="title is-4">Editar Jugador</h2>
-<form action="/jugadores/editar" method="POST">
+<form action="/jugadores/editar" method="POST" enctype="multipart/form-data">
   <input type="hidden" name="_csrf" value="<%= csrfToken %>">
   <input type="hidden" name="id" value="<%= jugador.id %>">
+  <input type="hidden" name="imagen_vieja" value="<%= jugador.imagen %>">
+
   <div class="field">
     <label for="nombre" class="label">Nombre</label>
     <div class="control">
@@ -25,9 +27,9 @@
     </div>
   </div>
   <div class="field">
-    <label for="imagen" class="label">Imagen</label>
+    <label for="archivo" class="label">Imagen</label>
     <div class="control">
-      <input id="imagen" name="imagen" class="input" type="text" value="<%= jugador.imagen %>">
+      <input id="archivo" name="archivo" class="input" type="file">
     </div>
   </div>
   <input class="button is-danger" type="submit" value="Guardar cambios">

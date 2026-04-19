@@ -2,7 +2,7 @@
 
 <a href="/inicio/jugadores/actuales"><button class="button is-danger">Regresar</button></a>
 <br><br>
-<form action="/jugadores/nuevo" method="POST">
+<form action="/jugadores/nuevo" method="POST" enctype="multipart/form-data">
   <input type="hidden" name="_csrf" value="<%= csrfToken %>">
   <div class="field">
     <label for="nombre" class="label">Nombre</label>
@@ -23,9 +23,9 @@
     </div>
   </div>
   <div class="field">
-    <label for="imagen" class="label">Imagen</label>
+    <label for="archivo" class="label">Imagen</label>
     <div class="control">
-      <input id="imagen" name="imagen" class="input" type="text" placeholder="e.g. https://ejemplo.com/foto.jpg">
+      <input id="archivo" name="archivo" class="input" type="file">
     </div>
   </div>
   <input class="button is-danger" type="submit" value="Guardar">
