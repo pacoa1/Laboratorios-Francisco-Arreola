@@ -232,6 +232,13 @@ RBAC (Role-Based Access Control) asigna permisos a "roles" en lugar de a usuario
 
 ---
 
+## Lab 23, 25 y 28 - Stored Procedures, Transacciones, Triggers
+
+**¿Trazabilidad de Laboratorio?**
+feat(db): implementar triggers, transacciones y stored procedures
+
+---
+
 ## Lab 24 - AJAX
 
 **¿Trazabilidad de Laboratorio?**
@@ -247,6 +254,8 @@ AJAX es el motor fundamental que hace posibles las RIAs. Su importancia radica e
 
 **¿Qué es JSON?**
 JSON es un formato de texto ligero, estructurado y estándar que se utiliza para el intercambio de datos entre un cliente y un servidor. Aunque su sintaxis se deriva de los objetos en JavaScript (usando llaves `{}` para objetos y corchetes `[]` para arreglos), es un formato completamente independiente soportado por prácticamente todos los lenguajes de programación modernos. Actualmente, es el estándar principal en la web debido a que es mucho más rápido y fácil de procesar que XML.
+
+---
 
 ## Lab 26 - Servicios Web
 
