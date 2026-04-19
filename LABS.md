@@ -1,18 +1,19 @@
 # Respuestas a Preguntas de Laboratorios
 
 ## Índice
-* [Lab 1 - Introducción a HTML5 y Aplicaciones Web](#lab-1---introducción-a-html5-y-aplicaciones-web)
-* [Lab 3 - CSS](#lab-3---css)
-* [Lab 4 - Fundamentos de JavaScript](#lab-4---fundamentos-de-javascript)
-* [Lab 5 - Frameworks de Estilo](#lab-5---frameworks-de-estilo)
-* [Lab 6 - Programación Orientada a Eventos](#lab-6---programación-orientada-a-eventos)
-* [Lab 11 - Express](#lab-11---express)
-* [Lab 12 - HTML Dinámico](#lab-12---html-dinámico)
-* [Lab 13 - MVC](#lab-13---mvc)
-* [Lab 14 - Manejo de sesiones y cookies](#lab-14---manejo-de-sesiones-y-cookies)
-* [Lab 17 - Interacción con la base de datos](#lab-17---interacción-con-la-base-de-datos)
-* [Lab 18 - Autentificación](#lab-18---autentificación)
-* [Lab 19 - RBAC](#lab-19---rbac)
+
+- [Lab 1 - Introducción a HTML5 y Aplicaciones Web](#lab-1---introducción-a-html5-y-aplicaciones-web)
+- [Lab 3 - CSS](#lab-3---css)
+- [Lab 4 - Fundamentos de JavaScript](#lab-4---fundamentos-de-javascript)
+- [Lab 5 - Frameworks de Estilo](#lab-5---frameworks-de-estilo)
+- [Lab 6 - Programación Orientada a Eventos](#lab-6---programación-orientada-a-eventos)
+- [Lab 11 - Express](#lab-11---express)
+- [Lab 12 - HTML Dinámico](#lab-12---html-dinámico)
+- [Lab 13 - MVC](#lab-13---mvc)
+- [Lab 14 - Manejo de sesiones y cookies](#lab-14---manejo-de-sesiones-y-cookies)
+- [Lab 17 - Interacción con la base de datos](#lab-17---interacción-con-la-base-de-datos)
+- [Lab 18 - Autentificación](#lab-18---autentificación)
+- [Lab 19 - RBAC](#lab-19---rbac)
 
 ---
 
@@ -25,12 +26,13 @@ Internet es la infraestructura física de redes que conecta computadoras globalm
 Una URL consta de varios componentes: el protocolo (http, https), el nombre de dominio, la ruta del recurso, parámetros de consulta y fragmentos. Por ejemplo, en `https://www.ejemplo.com:8080/ruta?param=valor#seccion`, cada parte cumple una función específica.
 
 **¿Cuál es el propósito de los métodos HTTP?**
-* **GET:** Obtiene datos del servidor sin modificarlos.
-* **HEAD:** Similar a GET pero solo retorna encabezados.
-* **POST:** Envía datos para crear recursos.
-* **PUT:** Reemplaza un recurso completamente.
-* **PATCH:** Modifica parcialmente un recurso.
-* **DELETE:** Elimina un recurso del servidor.
+
+- **GET:** Obtiene datos del servidor sin modificarlos.
+- **HEAD:** Similar a GET pero solo retorna encabezados.
+- **POST:** Envía datos para crear recursos.
+- **PUT:** Reemplaza un recurso completamente.
+- **PATCH:** Modifica parcialmente un recurso.
+- **DELETE:** Elimina un recurso del servidor.
 
 **¿Qué método usar al enviar usuario y contraseña? ¿Por qué?**
 Se debe usar POST porque los datos viajan en el cuerpo de la solicitud, no en la URL. Esto evita que información sensible aparezca en el historial del navegador o en los logs del servidor. POST es la opción segura para credenciales.
@@ -89,10 +91,12 @@ Porque es más pequeño al eliminar espacios, saltos de línea y comentarios. Un
 ## Lab 4 - Fundamentos de JavaScript
 
 **¿Qué diferencias y semejanzas hay entre Java y JavaScript?**
-* **Semejanzas:** Ambos usan sintaxis basada en C (llaves `{}`), tienen funciones y variables.
-* **Diferencias:** Java es un lenguaje compilado, de tipado estático y orientado a objetos clásico. JavaScript es interpretado, de tipado dinámico y basado en prototipos. 
+
+- **Semejanzas:** Ambos usan sintaxis basada en C (llaves `{}`), tienen funciones y variables.
+- **Diferencias:** Java es un lenguaje compilado, de tipado estático y orientado a objetos clásico. JavaScript es interpretado, de tipado dinámico y basado en prototipos.
 
 **¿Qué métodos tiene el objeto Date? (Menciona al menos 5)**
+
 1. `getFullYear()` - devuelve el año
 2. `getMonth()` - devuelve el mes
 3. `getDate()` - devuelve el día del mes
@@ -100,6 +104,7 @@ Porque es más pequeño al eliminar espacios, saltos de línea y comentarios. Un
 5. `getTime()` - devuelve los milisegundos desde 1970
 
 **¿Qué métodos tienen los arreglos? (Menciona al menos 5)**
+
 1. `push()` - agrega un elemento al final
 2. `pop()` - elimina el último elemento
 3. `shift()` - elimina el primer elemento
@@ -121,7 +126,7 @@ Las variables globales pueden ser modificadas desde cualquier parte del código.
 ## Lab 5 - Frameworks de Estilo
 
 **Describe Material Design**
-Material Design es un sistema de diseño creado por Google que proporciona guías para crear interfaces visuales hermosas y funcionales. Se basa en principios de diseño que imitan el comportamiento de materiales físicos como el papel y la tinta. 
+Material Design es un sistema de diseño creado por Google que proporciona guías para crear interfaces visuales hermosas y funcionales. Se basa en principios de diseño que imitan el comportamiento de materiales físicos como el papel y la tinta.
 
 Enfatiza la claridad y la jerarquía visual, utilizando colores atrevidos, tipografía clara e incorporando sombras para crear profundidad. Utiliza movimiento coherente con transiciones suaves y está basado en una cuadrícula de 4dp. Los principios clave incluyen la materialidad como metáfora, un diseño audaz, y consistencia multiplataforma.
 
@@ -147,13 +152,14 @@ Se desarrolló una tienda online con validación de cantidades, cálculo automá
 
 **Describe el archivo package.json**
 El `package.json` es el archivo de configuración principal de un proyecto de Node.js.
-* **name**: nombre del proyecto.
-* **version**: la versión actual.
-* **description**: propósito del proyecto.
-* **type**: `commonjs` (usa `require()`) o `module` (usa `import`).
-* **main**: el archivo de entrada principal (ej. `app.js`).
-* **scripts**: comandos de terminal automatizados (ej. `"start": "node --watch app.js"`).
-* **dependencies**: lista de paquetes de terceros (ej. Express) necesarios para producción.
+
+- **name**: nombre del proyecto.
+- **version**: la versión actual.
+- **description**: propósito del proyecto.
+- **type**: `commonjs` (usa `require()`) o `module` (usa `import`).
+- **main**: el archivo de entrada principal (ej. `app.js`).
+- **scripts**: comandos de terminal automatizados (ej. `"start": "node --watch app.js"`).
+- **dependencies**: lista de paquetes de terceros (ej. Express) necesarios para producción.
 
 ---
 
@@ -161,10 +167,11 @@ El `package.json` es el archivo de configuración principal de un proyecto de No
 
 **¿Qué otros templating engines existen para Node?**
 Además de EJS, existen:
-* **Pug (antes Jade):** Sintaxis basada en indentación, sin tags de cierre.
-* **Handlebars:** Extiende Mustache con helpers. Usa doble llave `{{variable}}`.
-* **Mustache:** "Logic-less", muy simple y restrictivo con la lógica en la vista.
-* **Nunjucks:** Desarrollado por Mozilla, soporta herencia de plantillas y macros.
+
+- **Pug (antes Jade):** Sintaxis basada en indentación, sin tags de cierre.
+- **Handlebars:** Extiende Mustache con helpers. Usa doble llave `{{variable}}`.
+- **Mustache:** "Logic-less", muy simple y restrictivo con la lógica en la vista.
+- **Nunjucks:** Desarrollado por Mozilla, soporta herencia de plantillas y macros.
 
 ---
 
@@ -204,11 +211,12 @@ Es un ataque donde se inserta código SQL malicioso en los inputs del usuario pa
 ## Lab 18 - Autentificación
 
 **¿Qué otras formas de autentificación existen?**
-* **OAuth (SSO):** Iniciar sesión mediante proveedores de identidad (Google, GitHub).
-* **JWT (JSON Web Tokens):** Autenticación stateless basada en tokens cifrados, ideal para APIs.
-* **2FA / MFA:** Múltiples factores de autenticación (contraseña + SMS/App autenticadora).
-* **Biometría:** Huellas dactilares o FaceID (usualmente respaldado por WebAuthn).
-* **Passkeys:** Autenticación sin contraseña basada en criptografía de llave pública.
+
+- **OAuth (SSO):** Iniciar sesión mediante proveedores de identidad (Google, GitHub).
+- **JWT (JSON Web Tokens):** Autenticación stateless basada en tokens cifrados, ideal para APIs.
+- **2FA / MFA:** Múltiples factores de autenticación (contraseña + SMS/App autenticadora).
+- **Biometría:** Huellas dactilares o FaceID (usualmente respaldado por WebAuthn).
+- **Passkeys:** Autenticación sin contraseña basada en criptografía de llave pública.
 
 ---
 
@@ -218,5 +226,46 @@ Es un ataque donde se inserta código SQL malicioso en los inputs del usuario pa
 RBAC (Role-Based Access Control) asigna permisos a "roles" en lugar de a usuarios individuales. Los usuarios adoptan uno o más roles. Esto centraliza la gestión de autorización: si cambian las políticas de la empresa, se modifica el rol y el cambio se propaga automáticamente a todos los usuarios asignados a él.
 
 **Ejemplos de Sistemas con y sin RBAC:**
-* **Con RBAC (AWS IAM o Google Workspace):** Roles estrictamente definidos (Admin, Editor, Viewer). Escala perfectamente para miles de empleados.
-* **Sin RBAC (App simple o WordPress configurado por defecto):** Todos los usuarios registrados tienen el mismo nivel de acceso o se manejan banderas booleanas simples (`isAdmin`). Es rápido de programar, pero insostenible si la aplicación crece.
+
+- **Con RBAC (AWS IAM o Google Workspace):** Roles estrictamente definidos (Admin, Editor, Viewer). Escala perfectamente para miles de empleados.
+- **Sin RBAC (App simple o WordPress configurado por defecto):** Todos los usuarios registrados tienen el mismo nivel de acceso o se manejan banderas booleanas simples (`isAdmin`). Es rápido de programar, pero insostenible si la aplicación crece.
+
+---
+
+## Lab 24 - AJAX
+
+**¿Trazabilidad de Laboratorio?**
+feat(admin): agregar buscador dinámico de usuarios
+
+**¿Qué importancia tiene AJAX en el desarrollo de RIA's (Rich Internet Applications)?**
+AJAX es el motor fundamental que hace posibles las RIAs. Su importancia radica en que permite a una aplicación web enviar y recibir datos del servidor en segundo plano (de forma asíncrona) sin tener que recargar la página completa. Esto otorga a las aplicaciones web una fluidez, velocidad y reactividad similares a las de una aplicación de escritorio nativa (como Gmail o Google Maps), mejorando drásticamente la experiencia del usuario.
+
+**¿Qué implicaciones de seguridad tiene AJAX? ¿Dónde se deben hacer las validaciones de seguridad, del lado del cliente o del lado del servidor?**
+
+- **Implicaciones de seguridad:** Al usar AJAX, la lógica de comunicación, las rutas (endpoints) y la estructura de los datos quedan expuestas en el código JavaScript del navegador. Un atacante puede inspeccionar este código, interceptar las peticiones o realizar peticiones fraudulentas directamente a la API (usando herramientas externas), facilitando ataques como CSRF o XSS si las respuestas no se manejan correctamente.
+- **Dónde hacer las validaciones:** Las validaciones de seguridad siempre se deben hacer del lado del servidor. Las validaciones del lado del cliente existen única y exclusivamente para mejorar la experiencia del usuario (UX) previniendo envíos con errores básicos, pero un atacante puede saltárselas fácilmente desactivando JavaScript. El servidor es la única y verdadera línea de defensa.
+
+**¿Qué es JSON?**
+JSON es un formato de texto ligero, estructurado y estándar que se utiliza para el intercambio de datos entre un cliente y un servidor. Aunque su sintaxis se deriva de los objetos en JavaScript (usando llaves `{}` para objetos y corchetes `[]` para arreglos), es un formato completamente independiente soportado por prácticamente todos los lenguajes de programación modernos. Actualmente, es el estándar principal en la web debido a que es mucho más rápido y fácil de procesar que XML.
+
+## Lab 26 - Servicios Web
+
+**¿Trazabilidad de Laboratorio?**
+feat: implementar integración de de Slack y corregir log_project
+feat(employee): implementar self-review dinámico con generación por IA para todos los roles
+
+**¿Qué ventajas y desventajas tiene la integración de tus aplicaciones web con servicios web desarrollados por terceros?**
+
+**Ventajas:**
+
+- **Ahorro de tiempo y costos:** No tienes que reinventar la rueda. Integrar un servicio complejo (como pagos con Stripe, mapas con Google Maps o notificaciones con Slack) es infinitamente más rápido y barato que desarrollar toda esa infraestructura desde cero.
+- **Enfoque en el negocio principal (Core Business):** Permite a tu equipo de desarrollo concentrarse en la lógica que hace única a tu aplicación, delegando tareas genéricas o secundarias a empresas expertas en ese rubro.
+- **Mantenimiento delegado:** El proveedor del servicio de terceros es quien se encarga de arreglar bugs, actualizar la tecnología, garantizar la seguridad de su entorno y mantener sus servidores funcionando 24/7.
+- **Escalabilidad inmediata:** Los servicios comerciales están diseñados para manejar tráfico masivo. Si tu aplicación crece de golpe, el servicio externo escalará automáticamente para soportar las peticiones.
+
+**Desventajas:**
+
+- **Dependencia (Vendor Lock-in) y falta de control:** Si el servicio externo se cae, tu aplicación pierde funcionalidad. Además, si deciden cambiar las reglas de su API, subir los precios o cerrar la empresa, te verás obligado a reescribir tu código de emergencia.
+- **Riesgos de privacidad y seguridad:** Al usar servicios externos, muchas veces los datos de tus usuarios viajan por servidores que tú no controlas. Si el proveedor sufre un hackeo, la reputación y confianza de tu aplicación también se verán afectadas.
+- **Costos a escala:** Muchos servicios tienen capas gratuitas atractivas, pero cobran por volumen de peticiones. Cuando tu aplicación crece mucho, los costos por uso de la API pueden dispararse y volverse insostenibles.
+- **Latencia (Rendimiento):** Cada llamada a un servicio web de terceros requiere que los datos viajen por internet hacia otro servidor y regresen. Esto añade un tiempo de retraso que, si no se maneja bien, puede hacer que tu aplicación se sienta lenta para el usuario.
