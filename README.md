@@ -1,6 +1,6 @@
 # Laboratorios y Tareas - Construcción de Software
 
-Repositorio para los lavoratorios y tareas de la materia de Construcción de Software y Toma de Decisiones.
+Repositorio para los laboratorios y tareas de la materia de Construcción de Software y Toma de Decisiones.
 
 **Autor:** Francisco Arreola  
 **Matrícula:** A01706242  
