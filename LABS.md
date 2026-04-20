@@ -14,7 +14,9 @@
 - [Lab 17 - Interacción con la base de datos](#lab-17---interacción-con-la-base-de-datos)
 - [Lab 18 - Autentificación](#lab-18---autentificación)
 - [Lab 19 - RBAC](#lab-19---rbac)
-
+- [Lab 23, 25 y 28 - Stored Procedures, Transacciones, Triggers](#lab-23-25-y-28---stored-procedures-transacciones-triggers)
+- [Lab 24 - AJAX](#lab-24---ajax)
+- [Lab 26 - Servicios Web](#lab-26---servicios-web)
 ---
 
 ## Lab 1 - Introducción a HTML5 y Aplicaciones Web
